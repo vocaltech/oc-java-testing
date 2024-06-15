@@ -1,6 +1,7 @@
 plugins {
     id 'java'
     id 'jacoco'
+    id "org.sonarqube" version "4.4.1.3373"
 }
 
 group = 'fr.vocaltech.tdd'
@@ -15,6 +16,17 @@ test {
 }
 jacocoTestReport {
     dependsOn test // tests are required to run before generating the report
+    reports {
+        xml.required = true
+    }
+}
+
+sonar {
+    properties {
+        property "sonar.projectKey", "vocaltech_oc-java-testing"
+        property "sonar.organization", "vocaltech"
+        property "sonar.host.url", "https://sonarcloud.io"
+    }
 }
 
 dependencies {
