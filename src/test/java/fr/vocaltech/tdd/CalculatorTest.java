@@ -45,7 +45,7 @@ class CalculatorTest {
     }
 
     @Test
-    void givenTwoPositiveNumbers_whenAdd_thenOk() {
+    void givenTwoIntNumbers_whenAdd_thenOk() {
         // ARRANGE
         int a = 2;
         int b = 3;
@@ -55,6 +55,18 @@ class CalculatorTest {
 
         // ASSERT
         assertThat(somme).isEqualTo(5);
+    }
+
+    @Test
+    void givenTwoDoubleNumbers_whenAdd_thenOk() {
+        // Given
+        double a = 2.3;
+        double b = 3.6;
+
+        // When
+        double sum = calculatorUnderTest.add(a, b);
+
+        // Then
     }
 
     @Test
