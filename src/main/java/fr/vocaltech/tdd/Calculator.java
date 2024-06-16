@@ -4,6 +4,16 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class Calculator {
+    private String name = "";
+
+    public Calculator() {}
+    public Calculator(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
     public int add(int a, int b) {
         return a + b;
     }
