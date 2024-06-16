@@ -58,6 +58,19 @@ class CalculatorTest {
     }
 
     @Test
+    void givenName_whenInitCalc_thenGetNameOk() {
+        // Given
+        String name = "myCalc";
+
+        // When
+        Calculator namedCalculator = new Calculator(name);
+
+        // Then
+        assertThat(namedCalculator).isInstanceOf(Calculator.class);
+        assertThat(namedCalculator.getName()).isEqualTo(name);
+    }
+
+    @Test
     void givenTwoDoubleNumbers_whenAdd_thenOk() {
         // Given
         double a = 2.3;
