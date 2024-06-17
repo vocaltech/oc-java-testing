@@ -29,8 +29,8 @@ class UserServiceTest {
 
         // then (assert)
         switch(id) {
-            case 1 -> assertThat(foundUser.getFullName()).isEqualTo("Pat Raz");
-            case 2 -> assertThat(foundUser.getFullName()).isEqualTo("John Doe");
+            case 1 -> assertThat(foundUser.fullName()).isEqualTo("Pat Raz");
+            case 2 -> assertThat(foundUser.fullName()).isEqualTo("John Doe");
         }
     }
 }
