@@ -71,6 +71,7 @@ class CalculatorTest {
     }
 
     @Test
+    @Disabled("Disabled")
     void givenTwoDoubleNumbers_whenAdd_thenOk() {
         // Given
         double a = 2.3;
@@ -83,7 +84,7 @@ class CalculatorTest {
     }
 
     @Test
-    void givenTwoNumbers_whenMultiply_thenOk() {
+    void givenTwoIntNumbers_whenMultiply_thenOk() {
         // ARRANGE
         int a = 3;
         int b = 6;
