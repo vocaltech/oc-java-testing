@@ -13,7 +13,7 @@ import static org.mockito.Mockito.*;
 class UserServiceTest {
     @ParameterizedTest(name = "Handling userid {0}")
     @ValueSource(ints = { 1, 2 })
-    void givenUserId_whenFindUserById_thenReturnUser(int id) {
+    void givenUserIds_whenFindUserById_thenReturnUser(int id) {
         // given (arrange)
         UserRepository mockUserRepository = mock();
         switch (id) {
