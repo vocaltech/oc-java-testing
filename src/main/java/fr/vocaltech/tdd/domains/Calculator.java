@@ -1,4 +1,4 @@
-package fr.vocaltech.tdd;
+package fr.vocaltech.tdd.domains;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -24,6 +24,10 @@ public class Calculator {
 
     public int multiply(int a, int b) {
         return a * b;
+    }
+
+    public int divide(int a, int b) {
+        return a / b;
     }
 
     public double multiply(double a, double b) {
