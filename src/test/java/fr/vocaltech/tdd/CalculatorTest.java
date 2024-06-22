@@ -1,5 +1,6 @@
 package fr.vocaltech.tdd;
 
+import fr.vocaltech.tdd.domains.Calculator;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
@@ -11,6 +12,7 @@ import java.time.Instant;
 import java.util.Calendar;
 import java.util.Set;
 
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.catchThrowable;
 
@@ -95,8 +97,9 @@ class CalculatorTest {
         // ASSERT
         assertThat(multiply).isEqualTo(18);
     }
+
     @ParameterizedTest(name = "{0} x 0 is equal to zero !")
-    @ValueSource(ints = { 3, 6, 9 })
+    @ValueSource(ints = {3, 6, 9})
     void givenNumbers_whenMultiplyWithZero_thenReturnZero(int args) {
         // ARRANGE
 
@@ -108,7 +111,7 @@ class CalculatorTest {
     }
 
     @ParameterizedTest(name = "{0} + {1} doit etre egal a {2}")
-    @CsvSource({ "1,1,2", "2,3,5", "3,6,9"})
+    @CsvSource({"1,1,2", "2,3,5", "3,6,9"})
     void givenCsvSourceArgs_whenSum_thenOk(int arg1, int arg2, int expectedRes) {
         // ARRANGE
 
@@ -173,5 +176,30 @@ class CalculatorTest {
 
         // Assert (then)
         assertThat(actualDigits).containsExactly(0);
+    }
+
+    @Test
+    void givenTwoIntNumbers_whenDivide_thenOk() {
+        // given
+        int a = 6;
+        int b = 3;
+
+        // when
+        int result = calculatorUnderTest.divide(a, b);
+
+        // then
+        assertThat(result).isEqualTo(2);
+    }
+
+    @Test
+    void givenOneIntNumberAndZero_whenDivide_thenThrowArithmeticException() {
+        // given
+        int a = 6;
+        int b = 0;
+
+        // when
+        assertThrows(ArithmeticException.class, () -> calculatorUnderTest.divide(a, b));
+
+        // then
     }
 }
