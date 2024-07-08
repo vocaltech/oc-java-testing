@@ -1,6 +1,6 @@
 package fr.vocaltech.tdd.services;
 
-import fr.vocaltech.tdd.domains.UserRepository;
+import fr.vocaltech.tdd.domains.repositories.UserRepository;
 import fr.vocaltech.tdd.domains.models.User;
 
 public class UserServiceImpl implements UserService {
